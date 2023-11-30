@@ -1,0 +1,118 @@
+ 
+:root{
+    --pink:#e84393;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+/* header css */
+
+/* footer css */
+
+
+footer{
+    background-color: rgb(181, 6, 82);
+    
+}
+
+.footer-content{
+   width: 100%;
+   padding: 50px 30px 20px;
+    
+}
+.footer-social-icons{
+    display: flex;
+    justify-content: center;
+   
+}
+.footer-social-icons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(184, 189, 195);
+    margin: 10px;
+    border-radius: 50%;
+}
+.footer-social-icons a i{
+    color: black;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.footer-social-icons a:hover{
+   transition: 0.5s;
+   background-color: rgb(181, 6, 82) ;
+}
+
+.footer-social-icons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footer-nav{
+    
+    margin: 20px 0;
+   
+}
+
+.footer-nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+   
+}
+.footer-nav ul li a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 15px;
+    opacity: 0.7;
+    transform: 0.5s;
+}
+.footer-nav  li a:hover{
+    opacity: 1;
+}
+
+.footer-copyright{
+    background-color:rgb(128, 2, 56) ;
+    text-align: center;
+    padding: 20px;
+    
+}
+.footer-copyright p{
+    color: white;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+
+}
+
+@media (max-width: 700px){
+    .footer-nav ul{
+        flex-direction: column;
+    }
+    .footer-nav ul li{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}
+
+
