@@ -24,29 +24,26 @@
         <p><i>Express your emotions with the language of flowers! Let our expert <br>florists turn your sentiments into a 
         breathtaking bouquet. <br><b>Contact us today to bring beauty and joy to your special moments.<b></i></p>
         <div class="con-1-container">
-        <div class="con-1-box">
+        <a href='https://www.google.com/maps/search/?api=1&query=No.52%2C+Main+Street%2C+Aluthgama' class="con-1-box">
         <i class='bx bx-walk'></i>
         <h3>Visit Us</h3>
         <h4><b>No.52, Main Street, Aluthgama</b></h4>
-        </div>
-        
-        <div class="con-1-box">
+        </a>
+
+        <a href='tel:+94775308869' class="con-1-box">
         <i class='bx bxs-phone-call' ></i>
         <h3>Happiness Hotline</h3>
         <h4><b>+94 77 530 8869<b></h4>
-        </div>
+        </a>
         
-        <div class="con-1-box">
+        <a href='mailto:enchantedblooms@gmail.com' class="con-1-box">
         <i class='bx bxs-envelope'></i>
         <h3>Support Overall</h3>
-        <h4><b>enchanterblossoms@gmail.com</b></h4>
-        </div>
+        <h4><b>enchantedblooms@gmail.com</b></h4>
+        </a>
+
         </div>
 
-        <!-- <div class="chat-btn">
-        <a href="#con-2"><i class='bx bxs-message-rounded-dots' ></i></a>
-        </div> -->
-        
 </section>
 
         <section class="con-2" id="con-2">
@@ -66,7 +63,6 @@
             </form>
            
 </section>
-
 
 
     <?php include('footer.php'); ?>
