@@ -1,19 +1,25 @@
 h2 {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
     text-align: center;
     font-family: "Lucida Handwriting", cursive;
     color: rgb(245, 95, 120);
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: 500;
 }
 
-.container p {
-    font-size: 1.5rem;
+.empty p {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    margin-top: 10rem;
 }
 
-.container {
+.empty {
     text-align: center;
+    
+}
+
+#btn-empty {
     margin-bottom: 5rem;
 }
 
@@ -21,6 +27,8 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
     margin-bottom: 5rem;
+    font-size: 1.5rem;
+    font-family: Tahoma, sans-serif;
 }
 
 th,
