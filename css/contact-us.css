@@ -1,0 +1,141 @@
+.con-1{
+    background:url(../asset/contact-us-bg.jpg) no-repeat;
+}
+
+
+.con-1 h2 {
+    padding-top: 8rem;
+    padding-left: 12rem;
+    text-align: left; 
+    font-size: 4.5rem;
+    margin-bottom: 1rem !important; 
+    font-family:  "Lucida Handwriting", cursive;
+    color: rgb(245, 95, 120);
+
+}
+
+.con-1 p {
+    margin-top: 0.5rem;
+    padding-left: 12rem;
+    text-align: left; 
+    font-size: 1.3rem;
+    margin-bottom: 4rem !important;
+}
+
+.con-1 a{
+    text-decoration: none;
+    color: black;
+}
+
+.con-1-container {
+    display: flex;
+    padding-left: 12rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 5rem;
+}
+
+.con-1-container .con-1-box {
+    width: 15rem;
+    height: 15rem;
+    padding: .5rem .5rem .5rem;
+    transition: .5s ease; 
+} 
+
+.con-1-container .con-1-box:hover h4{
+    color: rgb(245, 95, 120);
+}
+
+.con-1-container .con-1-box:hover {
+    transform: scale(1.02);
+    box-shadow: none;
+}
+
+
+
+
+.con-1-box i{
+    margin: 3rem 0 0.5rem;
+    font-size: 3rem;
+    color: rgb(245, 95, 120);
+}
+
+.con-1-box h3{
+    font-size: 1.4rem;
+}
+
+.con-1-box p{
+    font-size: 1rem;
+    margin: 1rem 0 3rem;
+}
+
+
+
+.con-2 {
+    margin-top: 0rem !important;
+}
+.con-2 h2{
+    padding-top: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-family:  "Lucida Handwriting", cursive;
+    color: rgb(245, 95, 120);
+}
+
+.con-2 form {
+    max-width: 60rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.con-2 form .input-box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+}
+
+.con-2 form .input-box input, 
+.con-2 form textarea {
+    width: 84%;
+    padding: .7rem;
+    font-size: 1rem;
+    color: #000000;
+    border-radius: .2rem;
+    margin: .3rem 0;
+    border: .1rem solid darkgray;
+}
+
+
+.con-2 form .input-box input {
+    width: 40%;
+} 
+
+.con-2 form textarea {
+    resize: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 1.8rem;
+    background: rgb(245, 95, 120);
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    color: white;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    border: none;
+}
+
+.btn:hover {
+    box-shadow: 0 0 .5rem rgb(245, 95, 120);
+}
+
+.con-2 form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
