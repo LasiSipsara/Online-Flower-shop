@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -172,8 +177,8 @@
                     echo "<img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'>";
 
                     echo "<div class='item-card-icons'>
-                  <a href='#' class='fas fa-heart'></a> 
-                  <a href='#' class='cart-btn'>Add to cart</a>
+                  <a href='php\actions.home.php?wishlist=".$row['flower_id']. "'class='fas fa-heart' id='wishlist-icon'></a> 
+                  <a href='php\actions.home.php?cart=".$row['flower_id']. "' class='cart-btn' id='add-to-cart=btn'>Add to cart</a>
                   </div>
                   </div>";
 
@@ -201,6 +206,8 @@
     <?php
     include_once 'Footer.php';
     ?>
+
+    <script src="js\header.js"></script>
 </body>
 
 </html>

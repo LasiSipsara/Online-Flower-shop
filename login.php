@@ -31,12 +31,21 @@
                     echo "<div class='message'>
                       <p>Wrong Username or Password</p>
                        </div> <br>";
-                   echo "<a href='index.php'><button class='btn'>Go Back</button>";
+                   echo "<a href='login.php'><button class='btn'>Go Back</button>";
          
                 }
                 if(isset($_SESSION['valid'])){
-                    header("Location: home.php");
-                }
+                    $_SESSION['user_id'] = $row['Id'];
+                    $_SESSION['user_name']=$row['Firstname'];
+                    $_SESSION['user_email']=$row['Email'];
+
+                    if($row['role']=='admin'){
+                        header("Location: adminDashboard.php");
+                    }else if($row['role']=='user'){
+                        header("Location: home.php");
+                    }
+                    
+                } 
               }else{
 
             
@@ -61,7 +70,10 @@
                     Don't have account? <a href="register.php">Sign Up Now</a>
                 </div>
             </form>
+            <a href="home.php">Back to home</a>
         </div>
+       
+
         <?php } ?>
       </div>
 </body>
