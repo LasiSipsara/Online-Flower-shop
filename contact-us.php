@@ -9,9 +9,10 @@
     
      <script src="https://kit.fontawesome.com/295e880f12.js" crossorigin="anonymous"></script>
 
-     <link rel="stylesheet" href="css/contact-us.css">
      <link rel="stylesheet" href="css/header.css">
+     <link rel="stylesheet" href="css/contact-us.css">
      <link rel="stylesheet" href="css/footer.css">
+     
 </head>
 <body>
 
@@ -21,27 +22,29 @@
 
     <section class="con-1" id="con-1">
         <h2 class="heading">Contact Us</h2>
-        <p><i>Express your emotions with the language of flowers! Let our expert <br>florists turn your sentiments into a 
-        breathtaking bouquet. <br><b>Contact us today to bring beauty and joy to your special moments.<b></i></p>
+        <p><i>Express your emotions with the language of flowers! Let our expert florists turn your sentiments into a 
+        breathtaking <br><b>Contact us today to bring beauty and joy to your special moments.<b></i></p>
+        
         <div class="con-1-container">
+
         <a href='https://www.google.com/maps/search/?api=1&query=No.52%2C+Main+Street%2C+Aluthgama' class="con-1-box">
         <i class='bx bx-walk'></i>
-        <h3>Visit Us</h3>
-        <h4><b>No.52, Main Street, Aluthgama</b></h4>
+        <h3>Visit Us</h3><br>
+        <h4 class="h4-con1"><b>No.52, Main Street, Aluthgama</b></h4>
+        </a>
+
+        <a href='mailto:enchantedblooms@gmail.com' class="con-1-box">
+        <i class='bx bxs-envelope'></i>
+        <h3>Support Overall</h3><br>
+        <h4><b>enchantedblooms@gmail.com</b></h4>
         </a>
 
         <a href='tel:+94775308869' class="con-1-box">
         <i class='bx bxs-phone-call' ></i>
-        <h3>Happiness Hotline</h3>
+        <h3>Happiness Hotline</h3><br>
         <h4><b>+94 77 530 8869<b></h4>
         </a>
-        
-        <a href='mailto:enchantedblooms@gmail.com' class="con-1-box">
-        <i class='bx bxs-envelope'></i>
-        <h3>Support Overall</h3>
-        <h4><b>enchantedblooms@gmail.com</b></h4>
-        </a>
-
+    
         </div>
 
 </section>
@@ -58,7 +61,7 @@
                 <input type="text" placeholder="Subject" id="subject" name="subject" required>
                 <input type="text" placeholder="Phone Number" id="phoneno" name="phoneno" required>
             </div>
-            <textarea name="message" id="message" cols="30" rows="14" placeholder="Your Message" required></textarea>
+            <textarea name="message" id="message" cols="30" rows="14" placeholder="Your Message" required></textarea><br>
             <button type="submit" name="send" id="btn" class="btn">Send Message</button>
             </form>
            
