@@ -4,10 +4,12 @@ require_once '../dbconnect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['removeBtn'])) {
     $product_id = $_POST['productId'];
-    $user_id='1';
+   
+    $user_id=1;
+    
 
     // Perform the deletion from the wishlist table
-    $deleteQuery = "DELETE FROM wishlist WHERE flower_id = '$product_id' AND wishlist.user_id='$user_id'";
+    $deleteQuery = "DELETE FROM wishlist WHERE flower_id = '$product_id' AND wishlist.user_id=$user_id";
     $result = mysqli_query($connection, $deleteQuery);
 
     if ($result) {
