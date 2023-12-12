@@ -160,6 +160,7 @@
     <?php
     include_once ('Footer.php');
     ?>
+       <script src="js\header.js"></script>
 </body>
 </html>
 

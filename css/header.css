@@ -6,7 +6,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     outline: none;
     border: none;
     text-decoration: none;
@@ -50,6 +51,10 @@ header{
     color: var(--pink);
 }
 
+.header-icons{
+    display: flex;
+}
+
 .header-icons a{
   font-size: 2.5rem;
   color: #333;
@@ -72,6 +77,58 @@ header .fa-bars{
     border: .1rem solid rgba(0,0,0,.1);
     display: none;
 }
+
+#header-user-name{
+    font-size: 1.5rem;
+    color: #333;
+    
+}
+/* ... Your existing styles ... */
+
+.header-user-wrapper {
+    position: relative;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #eee;
+    border: .1rem solid rgba(0,0,0,.1);
+    width: 200px; /* Adjust the width as needed */
+}
+
+.user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-menu li {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: .1rem solid rgba(0,0,0,.1);
+}
+
+.user-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 15px;
+}
+
+.user-menu a:hover {
+  
+    color: white;
+}
+.user-menu li:hover {
+    background-color: var(--pink);
+   
+}
+
+
+
 
 
 /* media queries */
