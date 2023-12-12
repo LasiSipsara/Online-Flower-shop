@@ -81,7 +81,7 @@
                 else {
                     echo"<div class='empty'>";
                     echo"<p>Oops!<br>Your cart is empty. Click below to start shopping.<br><br></p>";
-                    echo "<button class='btn' id='btn-empy' onclick=\"window.location.href='home.php'\">Click here</button>";
+                    echo "<button class='btn' id='btn-empty' onclick=\"window.location.href='home.php'\">Click here</button>";
                     echo"</div>";
                     
                 }
@@ -143,9 +143,9 @@
             const cartTotal = document.querySelector('#cart-total');
             cartTotal.textContent = `Total Price: $${total.toFixed(0)}`;
         }
-
-
 </script>
+
+<script src="js\header.js"></script>
 </body>
 
 
