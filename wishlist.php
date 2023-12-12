@@ -1,3 +1,7 @@
+<?php
+session_start();
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +30,11 @@
 
     <?php
                     
-                    $user_id = '1';
+
+                    $user_id = '';
+                    if(isset($_SESSION['valid'])){
+                        $user_id=$_SESSION['user_id'];
+                    }
                     // Fetch product data from the database
                     $query = "SELECT flowers.flower_id,flower_name, price, image_path FROM flowers, wishlist WHERE wishlist.flower_id = flowers.flower_id AND wishlist.user_id='$user_id'";
                     $result = mysqli_query($connection, $query);
@@ -73,7 +81,7 @@
                 else {
                     echo"<div class='empty-wishlist'>";
                     echo"<p>Oops!<br>Your wishlist is empty. Click below to start shopping.<br><br></p>";
-                    echo "<button class='btn' id='btn' onclick=\"window.location.href='main.php'\">Click here</button>";
+                    echo "<button class='btn' id='btn' onclick=\"window.location.href='home.php'\">Click here</button>";
                     echo"</div>";
                 }
 
@@ -83,5 +91,6 @@
 
     </div>
     <?php include('footer.php'); ?>
+    <script src="js\header.js"></script>
 </body>
 </html>

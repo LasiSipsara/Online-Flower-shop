@@ -18,12 +18,24 @@
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
             $email = $_POST['email'];
+            $phone=$_POST['phone'];
+            $address=$_POST['address'];
             $password = $_POST['password'];
             $confirmPassword = $_POST['confirmPassword'];
 
 
             //verifying the unique email
             $verify_query = mysqli_query($con,"SELECT Email FROM users WHERE Email='$email'");
+
+           //verifying for vallid sri lanka phone number
+           $phone = preg_replace("/[^0-9]/", "", $phone);
+
+           $pattern = "/^(?:\+94|0)([1-9][0-9]{8})$/";
+
+    
+           if (!preg_match($pattern, $phone)) {
+            header('location: register.php?error=incorrect phone number');
+           }
 
         //verifying the confirm password
         if($password !== $confirmPassword){
@@ -43,12 +55,12 @@
         }
         else{
 
-            mysqli_query($con,"INSERT INTO users(FirstName,LastName,Email,Password) VALUES('$firstname','$lastname','$email','$password')") or die("Erroe Occured");
+            mysqli_query($con,"INSERT INTO users(FirstName,LastName,Email,Password,role) VALUES('$firstname','$lastname','$email','$password','user')") or die("Erroe Occured");
 
             echo "<div class='message'>
                       <p>Registration successfully!</p>
                   </div> <br>";
-            echo "<a href='index.php'><button class='btn'>Login Now</button>";
+            echo "<a href='login.php'><button class='btn'>Login Now</button>";
          
 
          }
@@ -75,10 +87,16 @@
                     <input type="text" name="email" id="email" autocomplete="off" required>
                 </div>
 
-                <!-- <div class="field input">
-                    <label for="age">Age</label>
-                    <input type="number" name="age" id="age" autocomplete="off" required>
-                </div> -->
+                <div class="field input">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" autocomplete="off" required>
+                </div>
+
+                <div class="field input">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" autocomplete="off" required>
+                </div>
+               
                 <div class="field input">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" autocomplete="off" required>
@@ -94,9 +112,10 @@
                     <input type="submit" class="btn" name="submit" value="Register" required>
                 </div>
                 <div class="links">
-                    Already a member? <a href="index.php">Sign In</a>
+                    Already a member? <a href="login.php">Sign In</a>
                 </div>
             </form>
+            <a href="home.php">Back to home</a>
         </div>
         <?php } ?>
       </div>
