@@ -31,10 +31,11 @@ session_start();
     <?php
                     
 
-                    $user_id = '';
-                    if(isset($_SESSION['valid'])){
-                        $user_id=$_SESSION['user_id'];
-                    }
+                     $user_id = '';
+                     if(isset($_SESSION['valid'])){
+                         $user_id=$_SESSION['user_id'];
+                     }
+
                     // Fetch product data from the database
                     $query = "SELECT flowers.flower_id,flower_name, price, image_path FROM flowers, wishlist WHERE wishlist.flower_id = flowers.flower_id AND wishlist.user_id='$user_id'";
                     $result = mysqli_query($connection, $query);
@@ -79,9 +80,9 @@ session_start();
                 }
 
                 else {
-                    echo"<div class='empty-wishlist'>";
+                    echo"<div class='empty'>";
                     echo"<p>Oops!<br>Your wishlist is empty. Click below to start shopping.<br><br></p>";
-                    echo "<button class='btn' id='btn' onclick=\"window.location.href='home.php'\">Click here</button>";
+                    echo "<button class='btn' id='btn-empty' onclick=\"window.location.href='home.php'\">Click here</button>";
                     echo"</div>";
                 }
 
