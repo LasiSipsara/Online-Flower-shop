@@ -3,7 +3,8 @@
 }
 
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Trebuchet MS', sans-serif;
     outline: none;
     border: none;
     text-decoration: none;

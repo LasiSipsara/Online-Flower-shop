@@ -174,7 +174,8 @@ session_start();
                 while ($row = $result1->fetch_assoc()) {
                     echo "<div class='item-card'>
                  <div class='flower-image'>";
-                    echo "<img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'>";
+                    $flowerId=$row['flower_id'];
+                    echo "<a href='item_details.php?flowerId=$flowerId'><img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'></a>";
 
                     echo "<div class='item-card-icons'>
                   <a href='php\actions.home.php?wishlist=".$row['flower_id']. "'class='fas fa-heart' id='wishlist-icon'></a> 
@@ -182,11 +183,11 @@ session_start();
                   </div>
                   </div>";
 
-                    echo " <div class='item-card-content'>
+                    echo "<a href='item_details.php?flowerId=$flowerId' ><div class='item-card-content'>
                    <h3>" . $row['flower_name'] . "</h3>
                    <div class='price'>" . $row['price'] . ".00</div>
                    </div>
-                   </div>";
+                   </div></a>";
                 }
                 ?>
 
