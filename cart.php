@@ -70,8 +70,10 @@
                     }   
                     echo"</table>";
 
+                    echo" <div class='container--2'>";
                     echo" <div id='cart-total'>Total Price: $0</div>";
-                    echo" <div class='check-out-btn'><a href='checkout.php'><i class='bx bxs-shopping-bag'></i>Checkout</a></div>"; 
+                    echo" <div class='check-out-btn'><a href='checkout.php'><i class='bx bxs-shopping-bag'></i>Checkout</a></div> <br><br><br><br>"; 
+                    echo" </div>";
 
 
 
