@@ -1,0 +1,28 @@
+h2{
+    margin-top: 5rem;
+    text-align: center;
+    color: #2a2185;
+}
+
+.msg-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 45rem;
+    border-radius: 8px;
+    border: 2px solid #2a2185;
+}
+
+.msg-box h3{
+    color: #2a2185;
+    text-align: center;
+}
+
+.msg-box a{
+    text-decoration: none;
+}
