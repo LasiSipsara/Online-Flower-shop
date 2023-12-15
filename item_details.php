@@ -37,21 +37,19 @@
 
             <?php
                 require_once 'dbconnect.php';
-
-                if (isset($_GET['flower_id'])) {
-                    $flower_id = $_GET['flower_id'];
+                $flower_id='';
+                if (isset($_GET['flowerId'])) {
+                    $flower_id = $_GET['flowerId'];
                 }
 
-                $flower_id=20; // need to remove
+               
 
                 $sql1 = "SELECT * from flowers where flower_id = $flower_id";
                 $result1 = $connection->query($sql1);
+                $row= $result1->fetch_assoc();
+                echo "<img src='" . $row['image_path'] . "' alt='' width='100%' id='MainImg'>";
 
-
-                while ($row = $result1->fetch_assoc()) {
-                    //echo "<div class='flower-image'>";
-                    echo "<img src='" . $row['image_path'] . "' alt='' width='100%' id='MainImg'>";
-                }
+                
             ?>
 
             <!-- <div class="small-img-group">
@@ -72,26 +70,15 @@
 
         <div class="single-pro-details">
             <?php
-                require_once 'dbconnect.php';
+              
 
-                if (isset($_GET['flower_id'])) {
-                    $flower_id = $_GET['flower_id'];
-                }
-
-                $flower_id=20; // need to remove
-
-                $sql1 = "SELECT * from flowers where flower_id = $flower_id";
-                $result1 = $connection->query($sql1);
-
-
-                while ($row = $result1->fetch_assoc()) {
                     echo "<h3>" . $row['flower_name'] . "</h3>
                     <div class='price'><h5>Rs." . $row['price'] . ".00</h5></div>
                     <div class='more-details'>
                         <div class= 'description'>". $row['description']."</div>
                         <div class='days'><h6>Freshness garanteed :</h6> " .$row['freshness garanteed'] . "</div>
                     </div>";
-                }
+                
             ?>
 
             <input type="number" value="1" min="0">
@@ -107,18 +94,11 @@
     
     <!-- similar products area start -->
     <section id="similar-products" class="section-pro">
-        <p>Similar Products</p>
+        <p>Other Products</p>
         <div class="item-cards-container">
                 <?php
-                if (isset($_GET['cid'])) {
-                    $categoryId = $_GET['cid'];
-                    $flower_id =$_GET['flower_id'];
-                    $sql1 = "SELECT * from flowers f join `flower category` c on f.flower_id=c.flower_id WHERE c.c_id=$categoryId";
-                }
-                // $categoryId =2;
-                // $flower_id =20;
 
-                // $sql1 = "SELECT * from flowers f join `flower category` c on f.flower_id=c.flower_id WHERE c.c_id=$categoryId AND f.flower_id != $flower_id limit 4";
+                 $sql1 = "SELECT * from flowers WHERE flower_id != $flower_id limit 4";
 
 
                 $result1 = $connection->query($sql1);

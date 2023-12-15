@@ -7,11 +7,10 @@
 
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/header.css">
     <script src="https://kit.fontawesome.com/295e880f12.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="assets/css/cart.css"> -->
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/wishlist and cart.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
    
@@ -30,7 +29,12 @@
         <h2>Your Cart</h2>
            
         <?php
-            $user_id = '1';
+
+
+            $user_id = '';
+            if(isset($_SESSION['valid'])){
+                $user_id=$_SESSION['user_id'];
+            }
 
             // Fetch product data from the database
             $query = "SELECT cart.flower_id,flower_name, price, image_path FROM flowers, cart WHERE cart.flower_id = flowers.flower_id AND cart.user_id='$user_id'";
@@ -71,8 +75,10 @@
                     }   
                     echo"</table>";
 
+                    echo" <div class='container--2'>";
                     echo" <div id='cart-total'>Total Price: $0</div>";
-                    echo" <div class='check-out-btn'><a href='checkout.php'><i class='bx bxs-shopping-bag'></i>Checkout</a></div>"; 
+                    echo" <div class='check-out-btn'><a href='checkout.php'><i class='bx bxs-shopping-bag'></i>Checkout</a></div> <br><br><br><br>"; 
+                    echo" </div>";
 
 
 
@@ -80,9 +86,9 @@
                 }
 
                 else {
-                    echo"<div class='empty-cart'>";
+                    echo"<div class='empty'>";
                     echo"<p>Oops!<br>Your cart is empty. Click below to start shopping.<br><br></p>";
-                    echo "<button class='btn' id='btn' onclick=\"window.location.href='home.php'\">Click here</button>";
+                    echo "<button class='btn' id='btn-empty' onclick=\"window.location.href='home.php'\">Click here</button>";
                     echo"</div>";
                     
                 }
@@ -144,11 +150,9 @@
             const cartTotal = document.querySelector('#cart-total');
             cartTotal.textContent = `Total Price: $${total.toFixed(0)}`;
         }
-
-
 </script>
-<script src="js\header.js"></script>
 
+<script src="js\header.js"></script>
 </body>
 
 

@@ -1,13 +1,14 @@
 <?php
-
+session_start();
 require_once '../dbconnect.php';
+$user_id='';
+if(isset($_SESSION['valid'])){
+    $user_id=$_SESSION['user_id']; 
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['removeBtn'])) {
     $product_id = $_POST['productId'];
    
-    $user_id=1;
-    
-
     // Perform the deletion from the wishlist table
     $deleteQuery = "DELETE FROM wishlist WHERE flower_id = '$product_id' AND wishlist.user_id=$user_id";
     $result = mysqli_query($connection, $deleteQuery);
@@ -23,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['removeBtn'])) {
 
 
 else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addToCart'])) {
-    // session_start();
+    
     // $productId = $_POST['productId'];
     // $userId = $_SESSION['user_id'];
 
     $product_id = $_POST['productId'];
-    $user_id='1';
+ 
 
 
     // Check if the product is already in the cart
