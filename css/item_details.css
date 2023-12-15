@@ -105,13 +105,10 @@
  }
 
  #prodetails .single-pro-details .more-details .description{
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-
- }
-
- #prodetails .single-pro-details .more-details .description{
     line-height: 2rem;
     padding: 1rem 0 2rem 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+
 }
 
 #prodetails .single-pro-details .more-details h6{
