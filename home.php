@@ -64,7 +64,7 @@ session_start();
                 <h3>Why choose us</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora et voluptas nulla reprehenderit suscipit fugiat perferendis obcaecati! Quis dolore commodi non, corrupti doloribus numquam laudantium voluptates, enim illo voluptas fuga culpa quaerat et saepe tempora sit ab obcaecati minus facere! Ipsa exercitationem ad aspernatur, ex architecto adipisci pariatur. Fugit iusto quod mollitia ipsam quo maiores corrupti reiciendis? Itaque, ut consectetur!</p>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto facilis vel aliquam repudiandae quam a assumenda autem ea. Ipsum laudantium non dolores voluptate repellat est nulla blanditiis a iste accusantium?</p>
-                 <a href="#" class="btn">Contact us</a>
+                 <a href="contact-us.php" class="btn">Contact us</a>
             </div>
 
         </div>
@@ -174,7 +174,8 @@ session_start();
                 while ($row = $result1->fetch_assoc()) {
                     echo "<div class='item-card'>
                  <div class='flower-image'>";
-                    echo "<img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'>";
+                    $flowerId=$row['flower_id'];
+                    echo "<a href='item_details.php?flowerId=$flowerId'><img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'></a>";
 
                     echo "<div class='item-card-icons'>
                   <a href='php\actions.home.php?wishlist=".$row['flower_id']. "'class='fas fa-heart' id='wishlist-icon'></a> 
@@ -182,11 +183,11 @@ session_start();
                   </div>
                   </div>";
 
-                    echo " <div class='item-card-content'>
+                    echo "<a href='item_details.php?flowerId=$flowerId' ><div class='item-card-content'>
                    <h3>" . $row['flower_name'] . "</h3>
-                   <div class='price'>" . $row['price'] . ".00</div>
+                   <div class='price'>$" . $row['price'] . "</div>
                    </div>
-                   </div>";
+                   </div></a>";
                 }
                 ?>
 

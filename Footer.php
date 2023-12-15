@@ -9,9 +9,9 @@
     </div>
     <div class="footer-nav">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="">Contact Us</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="home.php#about">About Us</a></li>
+            <li><a href="contact-us.php">Contact Us</a></li>
         </ul>
          
          

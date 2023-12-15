@@ -29,7 +29,12 @@
         <h2>Your Cart</h2>
            
         <?php
-            $user_id = '1';
+
+
+            $user_id = '';
+            if(isset($_SESSION['valid'])){
+                $user_id=$_SESSION['user_id'];
+            }
 
             // Fetch product data from the database
             $query = "SELECT cart.flower_id,flower_name, price, image_path FROM flowers, cart WHERE cart.flower_id = flowers.flower_id AND cart.user_id='$user_id'";
