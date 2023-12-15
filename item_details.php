@@ -84,8 +84,10 @@
             <input type="number" value="1" min="0">
             </br>
             <div class="cart-icons">
-                <a href='#' class='cart-btn'>Add to cart</a>
-                <a href='#' class='fas fa-heart' id='heart'></a>   
+                <?php
+                echo "<a href='php\actions.home.php?cart=".$row['flower_id']. "' class='cart-btn'>Add to cart</a>
+                <a href='php\actions.home.php?wishlist=".$row['flower_id']. "' class='fas fa-heart' id='heart'></a> ";
+                ?>
             </div>
             <a href='#' class='buy-btn'>Buy Now</a>   
         </div>
@@ -110,8 +112,9 @@
                     echo "<img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'>";
 
                     echo "<div class='item-card-icons'>
-                  <a href='#' class='fas fa-heart' id='heart2'></a> 
-                  <a href='#' class='cart-btn'>Add to cart</a>
+                  <a href='php\actions.home.php?wishlist=".$row['flower_id']. "' class='fas fa-heart' id='heart2'></a> 
+                  <a href='php\actions.home.php?cart=".$row['flower_id']. "' class='cart-btn'>Add to cart</a>
+                
                   </div>
                   </div>";
 
