@@ -42,14 +42,11 @@
                     $flower_id = $_GET['flowerId'];
                 }
 
-               
-
                 $sql1 = "SELECT * from flowers where flower_id = $flower_id";
                 $result1 = $connection->query($sql1);
                 $row= $result1->fetch_assoc();
                 echo "<img src='" . $row['image_path'] . "' alt='' width='100%' id='MainImg'>";
-
-                
+   
             ?>
 
             <!-- <div class="small-img-group">
@@ -70,7 +67,6 @@
 
         <div class="single-pro-details">
             <?php
-              
 
                     echo "<h3>" . $row['flower_name'] . "</h3>
                     <div class='price'><h5>Rs." . $row['price'] . ".00</h5></div>
@@ -84,8 +80,10 @@
             <input type="number" value="1" min="0">
             </br>
             <div class="cart-icons">
-                <a href='#' class='cart-btn'>Add to cart</a>
-                <a href='#' class='fas fa-heart' id='heart'></a>   
+                <?php
+                echo "<a href='php\actions.home.php?cart=".$row['flower_id']. "' class='cart-btn'>Add to cart</a>
+                <a href='php\actions.home.php?wishlist=".$row['flower_id']. "' class='fas fa-heart' id='heart'></a> ";
+                ?>
             </div>
             <a href='#' class='buy-btn'>Buy Now</a>   
         </div>
@@ -106,20 +104,21 @@
 
                 while ($row = $result1->fetch_assoc()) {
                     echo "<div class='item-card'>
-                 <div class='flower-image'>";
+                    <div class='flower-image'>";
                     echo "<img src='" . $row['image_path'] . "'alt='" . $row['flower_name'] . "'>";
 
                     echo "<div class='item-card-icons'>
-                  <a href='#' class='fas fa-heart' id='heart2'></a> 
-                  <a href='#' class='cart-btn'>Add to cart</a>
-                  </div>
-                  </div>";
+                    <a href='php\actions.home.php?wishlist=".$row['flower_id']. "' class='fas fa-heart' id='heart2'></a> 
+                    <a href='php\actions.home.php?cart=".$row['flower_id']. "' class='cart-btn'>Add to cart</a>
+                    
+                    </div>
+                    </div>";
 
                     echo " <div class='item-card-content'>
-                   <h3>" . $row['flower_name'] . "</h3>
-                   <div class='price'>" . $row['price'] . ".00</div>
-                   </div>
-                   </div>";
+                    <h3>" . $row['flower_name'] . "</h3>
+                    <div class='price'>" . $row['price'] . ".00</div>
+                    </div>
+                    </div>";
                 }
                 ?>
 
