@@ -91,7 +91,7 @@
                         <div class= 'description'>". $row['description']."</div>
                         <div class='days'><h6>Freshness garanteed :</h6> " .$row['freshness garanteed'] . "</div>
                     </div>";
-                
+                }
             ?>
 
             <input type="number" value="1" min="0">
