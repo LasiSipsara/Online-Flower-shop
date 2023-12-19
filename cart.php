@@ -47,9 +47,9 @@
                                 echo"<tr>";
                                     echo"<th class='img'>Image</th>
                                     <th class='product'>Product</th>
-                                    <th class='price'>Price</th>
+                                    <th class='price'>Price<br>(LKR)</th>
                                     <th class='pro-quantity'>Quantity</th>
-                                    <th class='pro-subtotal'>Total</th>
+                                    <th class='pro-subtotal'>Total<br>(LKR)</th>
                                     <th class='remove'>Remove</th>
                                 </tr>";
                             echo"</thead>
@@ -61,10 +61,10 @@
                         echo "<tr>";
                         echo "<td class='img'><img class='img-fluid' src='" . $row['image_path'] . "' alt='Product' /></td>";
                         echo "<td class='product'>" . $row['flower_name'] . "</td>";
-                        echo "<td class='price'>\${$row['price']}</td>";
+                        echo "<td class='price'>{$row['price']}</td>";
                         echo "<td class='pro-quantity'>";
                         echo"<input class='quantity-input small-width' type='number' value='1' min='0' onchange='updateSubtotal(this, {$row['price']})'></td>";
-                        echo "<td class='subtotal'>\${$row['price']}</td>";
+                        echo "<td class='subtotal'>{$row['price']}</td>";
                         echo "<td class='remove'>";
                         echo "<form method='post' action='php/remove_from_cart.php'>";
                         echo "<input type='hidden' name='productId' value='" . $row['flower_id'] . "'>";
@@ -76,7 +76,7 @@
                     echo"</table>";
 
                     echo" <div class='container--2'>";
-                    echo" <div id='cart-total'>Total Price: $0</div>";
+                    echo" <div id='cart-total'>Total Price: LKR 0</div>";
                     echo" <div class='check-out-btn'><a href='checkout.php'><i class='bx bxs-shopping-bag'></i>Checkout</a></div> <br><br><br><br>"; 
                     echo" </div>";
 
@@ -100,57 +100,57 @@
     <?php include('footer.php'); ?>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Calculate and set the initial total when the page is loaded
+        calculateInitialTotal();
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // Calculate and set the initial total when the page is loaded
-            calculateInitialTotal();
-
-            // Attach event listeners
-            const quantityInputs = document.querySelectorAll('input[type="number"]');
-            quantityInputs.forEach(input => {
-                input.addEventListener('change', function () {
-                    const price = parseFloat(this.closest('tr').querySelector('.price').textContent.replace('$', ''));
-                    updateSubtotal(this, price);
-                });
+        // Attach event listeners
+        const quantityInputs = document.querySelectorAll('input[type="number"]');
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                const price = parseFloat(this.closest('tr').querySelector('.price').textContent);
+                updateSubtotal(this, price);
             });
         });
+    });
 
-        function updateSubtotal(input, price) {
-            const row = input.closest('tr');
-            const quantity = parseInt(input.value);
-            const subtotalCell = row.querySelector('.subtotal');
-            const subtotal = quantity * price;
+    function updateSubtotal(input, price) {
+        const row = input.closest('tr');
+        const quantity = parseInt(input.value);
+        const subtotalCell = row.querySelector('.subtotal');
+        const subtotal = quantity * price;
 
-            subtotalCell.textContent = `$${subtotal.toFixed(0)}`;
+        subtotalCell.textContent = `${subtotal.toFixed(0)}`;
 
-            // Update the total after changing the quantity
-            updateTotal();
-        }
+        // Update the total after changing the quantity
+        updateTotal();
+    }
 
-        function updateTotal() {
-            const subtotals = document.querySelectorAll('.subtotal');
-            let total = 0;
+    function updateTotal() {
+        const subtotals = document.querySelectorAll('.subtotal');
+        let total = 0;
 
-            subtotals.forEach(subtotal => {
-                total += parseFloat(subtotal.textContent.replace('$', ''));
-            });
+        subtotals.forEach(subtotal => {
+            total += parseFloat(subtotal.textContent.replace('$', ''));
+        });
 
-            const cartTotal = document.querySelector('#cart-total');
-            cartTotal.textContent = `Total Price: $${total.toFixed(0)}`;
-        }
+        const cartTotal = document.querySelector('#cart-total');
+        cartTotal.textContent = `Total Price: LKR ${total.toFixed(0)}`;
+    }
 
-        function calculateInitialTotal() {
-            const subtotals = document.querySelectorAll('.subtotal');
-            let total = 0;
+    function calculateInitialTotal() {
+        const subtotals = document.querySelectorAll('.subtotal');
+        let total = 0;
 
-            subtotals.forEach(subtotal => {
-                total += parseFloat(subtotal.textContent.replace('$', ''));
-            });
+        subtotals.forEach(subtotal => {
+            total += parseFloat(subtotal.textContent.replace('$', ''));
+        });
 
-            const cartTotal = document.querySelector('#cart-total');
-            cartTotal.textContent = `Total Price: $${total.toFixed(0)}`;
-        }
+        const cartTotal = document.querySelector('#cart-total');
+        cartTotal.textContent = `Total Price: LKR ${total.toFixed(0)}`;
+    }
 </script>
+
 
 <script src="js\header.js"></script>
 </body>
