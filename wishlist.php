@@ -60,7 +60,7 @@ session_start();
                         echo "<tr>";
                         echo "<td class='img'><img class='img-fluid' src='" . $row['image_path'] . "' alt='Product' /></td>";
                         echo "<td class='product'>" . $row['flower_name'] . "</td>";
-                        echo "<td class='price'>$" . $row['price'] . "</td>";
+                        echo "<td class='price'>" . $row['price'] . "</td>";
                         echo "<td class='add-cart'>";
                         echo "<form method='post' action='php/wishlist-actions.php'>";
                         echo "<input type='hidden' name='productId' value='" . $row['flower_id'] . "'>";
