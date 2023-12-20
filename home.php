@@ -185,7 +185,7 @@ session_start();
 
                     echo "<a href='item_details.php?flowerId=$flowerId' ><div class='item-card-content'>
                    <h3>" . $row['flower_name'] . "</h3>
-                   <div class='price'>$" . $row['price'] . "</div>
+                   <div class='price'>LKR. " . $row['price'] . ".00</div>
                    </div>
                    </div></a>";
                 }

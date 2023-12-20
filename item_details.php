@@ -69,7 +69,11 @@
             <?php
 
                     echo "<h3>" . $row['flower_name'] . "</h3>
+<<<<<<< HEAD
                     <div class='price'><h5>$" . $row['price'] . "</h5></div>
+=======
+                    <div class='price'><h5>LKR. " . $row['price'] . ".00</h5></div>
+>>>>>>> 9f4c43f2956bd8541f56398d44bc4f18cdd54191
                     <div class='more-details'>
                         <div class= 'description'>". $row['description']."</div>
                         <div class='days'><h6>Freshness garanteed :</h6> " .$row['freshness garanteed'] . "</div>

@@ -1,0 +1,179 @@
+*{
+  font-family: 'Lato', sans-serif;
+
+}
+.account-page{
+  /* margin-top: 40rem; */
+  display: flex;
+  margin: 12rem 10rem 7rem 10rem;
+  justify-content: space-between;
+  padding: 5rem;
+  border: 0.5rem solid black;
+  /* background: rgb(248, 171, 208);  */
+  border-radius: 5rem;
+  box-sizing: border-box;
+  
+}
+.account-page .display{
+  /* width: 75%; */
+} 
+
+.account-page .profile{
+  width: 25%;
+  /* margin-right: 5rem; */
+  border-right: 0.1rem solid black;
+}
+
+.account-detail .hidden {
+  display: none;
+}
+
+.account-page .account-detail{
+  padding: 2rem 5rem;
+  width: 75%;
+}
+
+.account-page .profile .profile-detail{
+  height: 30rem;
+  /* margin-bottom: 10rem; */
+  text-align: center;
+  overflow: none;
+}
+
+.account-page .profile .profile-detail img{
+  width: 20rem;
+  /* height: 80rem; */
+  border: 1px solid #eee;
+  border-radius: 50%;
+  box-shadow: 0px 0p 8px #888888;
+  object-fit: cover;
+}
+
+.account-page .profile .profile-detail h2{
+  color: blueviolet;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Lato', sans-serif;
+}
+.account-page .profile .profile-detail p{
+  font-family: 'Lato', sans-serif;
+
+}
+.account-page .account-detail h2{
+  font-family: 'Lato', sans-serif;
+  padding: 0 0 3rem 0;
+  font-size: 2rem;
+
+}
+
+.account-page .profile ul{
+  list-style: none;
+  padding: 5rem;
+  } 
+
+.account-page .profile ul li{
+  margin-bottom: 1rem;
+
+  color:black;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1ps solid rgba(236, 240, 241,0.3);
+  text-align: left;
+  padding: 2rem 3rem;
+  display: block;
+  font-family: 'Lato', sans-serif;
+}
+/* .account-page .profile ul li a{
+  color:black;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1ps solid rgba(236, 240, 241,0.3);
+  text-align: left;
+  padding: 2rem 3rem;
+  display: block;
+  font-family: 'Lato', sans-serif;
+
+} */
+
+.account-page .profile ul li span{
+  float: right;
+}
+
+.active,
+.account-page .profile ul .options:hover{
+  color: black !important;
+  background-color: hotpink;
+  cursor: pointer;
+}
+
+.account-page .account-detail #myAccount .user-data-form{
+  margin-bottom: 10rem;
+}
+
+.account-page .account-detail #myAccount .user-data label {
+  display: block;
+  margin-bottom: 8px;
+  padding-top: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.account-page .account-detail #myAccount .user-data input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 1.2rem;
+}
+
+.account-page .account-detail #myAccount #submit-btn {
+  padding: 1.5rem;
+  border: 1px solid #131212;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  width: 15rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.account-page .account-detail #myAccount #submit-btn:hover {
+  background-color: hotpink;
+
+}
+
+.account-page .account-detail #changePassword .user-data-form{
+  margin-bottom: 10rem;
+}
+
+.account-page .account-detail #changePassword .user-data label {
+  display: block;
+  margin-bottom: 8px;
+  padding-top: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.account-page .account-detail #changePassword .user-data input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 1.2rem;
+}
+
+.account-page .account-detail #changePassword #submit-btn {
+  padding: 1.5rem;
+  border: 1px solid #131212;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  width: 15rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.account-page .account-detail #changePassword #submit-btn:hover {
+  background-color: hotpink;
+
+}
