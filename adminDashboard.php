@@ -1,7 +1,12 @@
-
 <?php
 session_start();
 require_once 'dbconnect.php';
+
+if (!isset($_SESSION['valid']) || $_SESSION['role'] !== 'admin') {
+    // Redirect to home.php
+    header("Location: home.php");
+    exit(); // Make sure to exit after a header redirect
+}
 
 ?>
 
@@ -15,6 +20,7 @@ require_once 'dbconnect.php';
     <script src="https://kit.fontawesome.com/295e880f12.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css\adminDashboard.css">
     <link rel="stylesheet" href="css\adminProducts.css">
+    <link rel="stylesheet" href="css\admin-message.css">
 </head>
 
 <body>
@@ -55,7 +61,7 @@ require_once 'dbconnect.php';
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="#" onclick="showContent('messages')">
                         <span class="icon">
                             <i class="fa-solid fa-message"></i>
                         </span>
@@ -90,14 +96,7 @@ require_once 'dbconnect.php';
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
+
             </ul>
         </div>
 
@@ -114,10 +113,29 @@ require_once 'dbconnect.php';
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </label>
                 </div>
+                <div class="header-user-wrapper">
+                    <a href="" id="header-user-link"><i class="fa-solid fa-user"></i><span id="header-user-name">
+                            <?php
+                            if (isset($_SESSION['user_name'])) {
+                                echo $_SESSION['user_name'];
+                            } else {
+                                echo "";
+                            }
 
-                <div class="user">
-                    <i class="fa-solid fa-user"></i>
+                            ?>
+                        </span></a>
+                    <div class="user-menu" id="userMenu">
+                        <ul>
+                            <li><a href="#">Your Profile</a></li>
+                            <li><a href="login.php" id="loginBtn">Login</a></li>
+                            <li><a href="logout.php" id="logoutBtn">Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- <div class="user">
+                    <i class="fa-solid fa-user"></i>
+                </div> -->
 
 
             </div>
@@ -313,7 +331,7 @@ require_once 'dbconnect.php';
                         <div class="input-area">
                             <label for="product-name">product name </label>
                             <input type="text" placeholder="product name" name="product-name" class="box"
-                                id="product-name" value="<?php echo $row3['flower_name'];  ?>">
+                                id="product-name" value="<?php echo $row3['flower_name']; ?>">
                         </div>
 
                         <div class="input-area">
@@ -434,10 +452,10 @@ require_once 'dbconnect.php';
                         </div>
 
                         <div class="update-form-btn-area">
-                        <input type="button" class="cancel btn" onclick="cancelUpdate()" value="Cancel">
-                        <input type="submit" class="update btn" name="update-product" value=" Update">
+                            <input type="button" class="cancel btn" onclick="cancelUpdate()" value="Cancel">
+                            <input type="submit" class="update btn" name="update-product" value=" Update">
                         </div>
-                        
+
 
 
                     </form>
@@ -492,32 +510,72 @@ require_once 'dbconnect.php';
 
 
             </div>
+            <!-- =============================start of messages======================================= -->
+
+            <div class="messages-content" id="messages">
+
+                <h2>Customers' Messages</h2>
+                <?php
+                require_once 'dbconnect.php';
+
+
+                $query = "SELECT fullname, email, message.subject, phoneno, message.message FROM message";
+                $result = mysqli_query($connection, $query);
+
+
+                if (mysqli_num_rows($result) > 0) {
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "
+                    <div class='msg-box-container'>
+                        <div class='msg-box'>
+                            <h3>" . $row['subject'] . "</h3>
+                            <h4>Customer Name : " . $row['fullname'] . "</h4>
+                            <h4>Email : <a href='mailto:" . $row['email'] . "'>" . $row['email'] . "</a></h4>
+                            <h4>Phone Number : <a href='tel:" . $row['phoneno'] . "'>" . $row['phoneno'] . "</a></h4>
+                            <h4>Message : " . $row['message'] . "</h4>
+                        </div>
+                    </div>";
+
+
+                    }
+                }
+
+                ?>
+
+            </div>
+
+
+
+
+
+
         </div>
 
     </div>
     <script>
-        function showContent(contentId){
+        function showContent(contentId) {
             // hide the all content divs
 
             let contentDivs = document.querySelectorAll('.content');
-            contentDivs.forEach(function(div) {
+            contentDivs.forEach(function (div) {
                 div.style.display = 'none';
             });
 
-             // Show the selected content div
-             document.getElementById(contentId).style.display = 'block';
+            // Show the selected content div
+            document.getElementById(contentId).style.display = 'block';
 
-             var navLinks = document.querySelectorAll('.navigation ul li');
-             navLinks.forEach(function(link) {
-             link.classList.remove('active');
+            var navLinks = document.querySelectorAll('.navigation ul li');
+            navLinks.forEach(function (link) {
+                link.classList.remove('active');
             });
 
             // Add 'active' class to the clicked navigation link
-             event.target.closest('li').classList.add('active');
+            event.target.closest('li').classList.add('active');
         }
 
-             
-        
+
+
 
         function productEdit() {
             let addContainer = document.getElementById('product-add-container');
@@ -537,15 +595,18 @@ require_once 'dbconnect.php';
             alert("Do you really need to delete the product?");
         }
 
-        function cancelUpdate(){
+        function cancelUpdate() {
             let addContainer = document.getElementById('product-add-container');
             let updateContainer = document.getElementById('product-update-container');
 
             addContainer.style.display = 'block';
             updateContainer.style.display = 'none';
-           
+
         }
+
     </script>
+    // js for header
+    <script src="js\header.js"></script>
 
 </body>
 

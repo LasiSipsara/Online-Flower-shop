@@ -1,5 +1,7 @@
 <?php 
    session_start();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +40,7 @@
                     $_SESSION['user_id'] = $row['Id'];
                     $_SESSION['user_name']=$row['Firstname'];
                     $_SESSION['user_email']=$row['Email'];
+                    $_SESSION['role']=$row['role'];
 
                     if($row['role']=='admin'){
                         header("Location: adminDashboard.php");

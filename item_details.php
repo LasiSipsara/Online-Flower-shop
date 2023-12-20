@@ -69,7 +69,7 @@
             <?php
 
                     echo "<h3>" . $row['flower_name'] . "</h3>
-                    <div class='price'><h5>Rs." . $row['price'] . ".00</h5></div>
+                    <div class='price'><h5>$" . $row['price'] . "</h5></div>
                     <div class='more-details'>
                         <div class= 'description'>". $row['description']."</div>
                         <div class='days'><h6>Freshness garanteed :</h6> " .$row['freshness garanteed'] . "</div>
@@ -116,7 +116,7 @@
 
                     echo " <div class='item-card-content'>
                     <h3>" . $row['flower_name'] . "</h3>
-                    <div class='price'>" . $row['price'] . ".00</div>
+                    <div class='price'>$" . $row['price'] . "</div>
                     </div>
                     </div>";
                 }

@@ -194,3 +194,27 @@ td {
     text-decoration: none;
     color: black;
 }
+
+
+@media (max-width: 768px) {
+    h2 {
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+        font-size: 4rem;
+      
+    }
+
+    .check-out-btn{
+        margin-right: 5rem;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .icon{
+        font-size: 2.5rem;
+    }
+
+    table td{
+        padding:5px 2px;
+    }
+}

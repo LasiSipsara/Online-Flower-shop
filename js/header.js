@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     loginBtn.addEventListener('click', function () {
-        alert('Login clicked');
+        // alert('Login clicked');
         userMenu.style.display = 'none';
     });
 

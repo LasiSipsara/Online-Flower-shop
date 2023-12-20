@@ -144,3 +144,52 @@
     margin-top: 2rem;
     cursor: pointer;
 }
+
+
+/* ================media queries==================== */
+
+/* Responsive styles for screens up to 768px */
+
+@media (max-width: 768px) {
+    .con-1 {
+        background-position:100% 100%; 
+        
+    }
+    .con-1 h2 {
+        padding-top: 8rem;
+        padding-left: 2rem;
+        font-size: 4rem;
+    }
+
+    .con-1 p {
+        padding-left: 2rem;
+        font-size: 1.5rem;
+        width: auto;
+    }
+
+    .con-1-container {
+       
+        padding-left: 2rem;
+    }
+
+    .con-1-container .con-1-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .con-1-box i {
+        margin: 1.5rem 0 0.5rem;
+        font-size: 3rem;
+    }
+
+    .con-1-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .con-1-box h4 {
+        font-size: 1rem;
+        margin: 0.5rem 0 2rem;
+    }
+
+}
+
