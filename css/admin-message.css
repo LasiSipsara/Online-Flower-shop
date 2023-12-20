@@ -1,28 +1,33 @@
-h2{
-    margin-top: 5rem;
+ #messages h2{
+    margin-top: 100px;
     text-align: center;
     color: #2a2185;
 }
 
-.msg-box-container {
+ #messages .msg-box-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 8px;
 }
 
-.msg-box {
+ #messages .msg-box {
     margin-top: 1rem;
-    padding: 1rem;
+    padding: 10px;
     width: 45rem;
     border-radius: 8px;
     border: 2px solid #2a2185;
+    font-size: 12px;
 }
 
-.msg-box h3{
+#messages .msg-box h3{
+    font-size: 15px;
     color: #2a2185;
     text-align: center;
 }
-
-.msg-box a{
+#messages .msg-box h4{
+    margin-top: 10px;
+}
+#messages .msg-box  h4 a{
     text-decoration: none;
 }
